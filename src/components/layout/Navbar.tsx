@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Circle, ChevronDown, Plus, Minus } from 'lucide-react';
 import Logo from '../ui/Logo';

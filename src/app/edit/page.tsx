@@ -1,10 +1,7 @@
+"use client";
 import Head from "next/head";
 import EditPageContent from "@/components/edit/EditPageContent";
-
-export const metadata = {
-  title: "Edit Drum Machine | DrumMachine v2",
-  description: "Edit your drum machine sounds and banks",
-};
+import Layout from "@/components/layout/Layout";
 
 const EditPage = () => {
   return (
@@ -16,8 +13,9 @@ const EditPage = () => {
           content="Edit your drum machine sounds and banks"
         />
       </Head>
-
+      <Layout onSoundBankChange={() => {}} currentBank="">
       <EditPageContent />
+      </Layout>
     </>
   );
 };

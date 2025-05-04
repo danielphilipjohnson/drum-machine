@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Menu, Search, Activity, Edit, Sliders } from "lucide-react";
 import { usePathname } from "next/navigation";
