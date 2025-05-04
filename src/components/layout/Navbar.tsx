@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Play, Circle, ChevronDown, Plus, Minus } from "lucide-react";
-import Logo from "../ui/Logo";
+import React, { useState, useEffect, useRef } from 'react';
+import { Play, Circle, ChevronDown, Plus, Minus } from 'lucide-react';
+import Logo from '../ui/Logo';
 
 const Navbar = ({
   onSoundBankChange,
   currentBank = "Default",
-  onBpmChange,
+  onBpmChange
 }: {
   onSoundBankChange: (bank: string) => void;
   currentBank?: string;
@@ -59,13 +59,13 @@ const Navbar = ({
   };
 
   const handleBpmInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       const value = parseInt(e.currentTarget.value);
       if (!isNaN(value)) {
         handleBpmChange(value);
       }
       setIsEditingBpm(false);
-    } else if (e.key === "Escape") {
+    } else if (e.key === 'Escape') {
       setIsEditingBpm(false);
     }
   };
@@ -81,6 +81,7 @@ const Navbar = ({
     <nav className="bg-zinc-800 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
+
           <Logo />
 
           <div className="flex items-center space-x-3">
@@ -123,8 +124,6 @@ const Navbar = ({
                     className="w-16 h-8 bg-zinc-800 text-zinc-300 text-center outline-none rounded"
                     min="40"
                     max="240"
-                    aria-label="BPM value"
-                    title="BPM value"
                   />
                 ) : (
                   <span title="Click to edit BPM">{bpm} BPM</span>
@@ -141,7 +140,7 @@ const Navbar = ({
             </div>
             <button
               onClick={togglePlay}
-              className={`p-2 rounded ${isPlaying ? "bg-green-600 text-white" : "bg-zinc-900 text-zinc-400"} border border-zinc-700 hover:bg-zinc-700 transition-colors`}
+              className={`p-2 rounded ${isPlaying ? 'bg-green-600 text-white' : 'bg-zinc-900 text-zinc-400'} border border-zinc-700 hover:bg-zinc-700 transition-colors`}
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               <Play size={18} />
@@ -149,7 +148,7 @@ const Navbar = ({
 
             <button
               onClick={toggleRecording}
-              className={`p-2 rounded ${isRecording ? "bg-red-600 text-white" : "bg-zinc-900 text-zinc-400"} border border-zinc-700 hover:bg-zinc-700 transition-colors`}
+              className={`p-2 rounded ${isRecording ? 'bg-red-600 text-white' : 'bg-zinc-900 text-zinc-400'} border border-zinc-700 hover:bg-zinc-700 transition-colors`}
               aria-label={isRecording ? "Stop recording" : "Start recording"}
             >
               <Circle size={18} />
